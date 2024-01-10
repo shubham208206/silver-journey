@@ -1,0 +1,21 @@
+name: Salesforce Deployment
+on:
+ push:
+  branches:
+   - main
+jobs:
+ deploy:
+  runs-on: ubuntu-latest
+  steps:
+  - run: echo "${{ runner.os }}"
+  - run: echo "${{ github.ref }} from ${{ github.repository }}."
+  - run: echo "${{ vars.SF_USERNAME }}"
+  - run: echo "${{ vars.SF_CLIENT_ID }}"
+  - run: echo "${{ vars.HUB_LOGIN_URL }}"
+  - run: echo "${{ vars.SALESFORCE_JWT_SECRET_KEY }}"
+  - run: echo "${{ vars.Name }}"
+  - uses: actions/checkout@v3
+  - run: npm install sfdx-cli -g
+  - run: echo "${{ vars.SALESFORCE_JWT_SECRET_KEY }}" > server.key
+  - run: sfdx auth:jwt:grant -u=${{ vars.SF_USERNAME }} -f=server.key -i=${{ vars.SF_CLIENT_ID }} -r=${{vars.HUB_LOGIN_URL}}
+  - run: sfdx force:source:deploy -p force-app/main/default -u=${{ vars.SF_USERNAME }}
