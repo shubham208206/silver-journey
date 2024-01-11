@@ -1,0 +1,14 @@
+name: Custom Workflow
+on:
+ pull_request:
+ workflow_dispatch:
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - name: First Job
+     run: |
+      echo Successfully made the custom workflow 
+      echo $github.event_name
+      echo $github
+  
