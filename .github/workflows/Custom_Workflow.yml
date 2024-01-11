@@ -9,6 +9,6 @@ jobs:
    - name: First Job
      run: |
       echo Successfully made the custom workflow 
-      echo $github.event_name
-      echo $github
+      echo value of the event is: ${{github.event_name}}
+      echo Value of the github variable is: ${{github}}
   
