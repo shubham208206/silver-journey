@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://lightning.nativeforms.app/canvas</canvasUrl>
+        <locations>Aura</locations>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>contact@nativeforms.app</contactEmail>
+    <label>Mforms_Canvas</label>
+    <oauthConfig>
+        <callbackUrl>https://lightning.nativeforms.app/canvas</callbackUrl>
+        <consumerKey>c1c187d9-b863-552b-aa30-cd0a85631d2f</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Api</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>Recruiter: Nontechnical</profileName>
+    <profileName>HR Recruiter</profileName>
+    <profileName>System Administrator</profileName>
+    <profileName>Custom: Sales Profile</profileName>
+    <profileName>Recruiter: Technical</profileName>
+    <profileName>Custom: Marketing Profile</profileName>
+    <profileName>Read Only</profileName>
+    <profileName>Solution Manager</profileName>
+    <profileName>Marketing User</profileName>
+    <profileName>Identity User</profileName>
+    <profileName>Standard User</profileName>
+    <profileName>Contract Manager</profileName>
+    <profileName>Custom: Support Profile</profileName>
+    <profileName>Minimum Access - Salesforce</profileName>
+    <profileName>Standard Platform User</profileName>
+    <profileName>Work.com Only User</profileName>
+    <profileName>Force.com - App Subscription User</profileName>
+    <profileName>Partner App Subscription User</profileName>
+    <profileName>Force.com - Free User</profileName>
+    <profileName>Analytics Cloud Security User</profileName>
+    <profileName>Analytics Cloud Integration User</profileName>
+    <profileName>Cross Org Data Proxy User</profileName>
+    <profileName>Backend_User</profileName>
+</ConnectedApp>

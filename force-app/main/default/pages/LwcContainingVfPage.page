@@ -1,0 +1,63 @@
+<apex:page standardController="Contact">
+    <body onload="subscribeToChannel()">
+        This is a sample Vf Page showing the contact : {! Contact.FirstName} {! Contact.LastName} <br/>
+        <!-- <apex:includeLightning/> -->
+        <!-- <div id ="lightning"></div>
+        <div id ="LWC"></div> -->
+        Message to publish using LMS : 
+        <input type="text" id="messagePayload"/> <br/>
+        <button onclick="handlePublish()">Publish</button>  <br/>
+        <button onclick="subscribeToChannel()">Subscribe</button>  <br/>
+
+        Data FROM LWC IS : <h1 id="message"></h1>
+    </body>
+    <!-- <script>
+        // document.addEventListener("getdata", function(event){
+        //     console.log('vf event data window listener => ', event.detail.email);
+        //     console.log('vf event data window listener => ', event);
+        // });
+        // $Lightning.use("c:lightningOutDependencyApplication", function() {
+        //     $Lightning.createComponent("lightning:button",
+        //       { label : "Press Me!" },
+        //       "lightning",
+        //       function(cmp) {
+        //         console.log("Very welled consoled by lightning out!!!!");
+        //       }
+        //   );
+
+        //   $Lightning.createComponent("c:lwcToEmbedInsideAura",
+        //     {},
+        //     "LWC",
+        //     function(){
+        //         console.log('successfully breaked!!');
+        //     }
+        //     );
+        // });
+    </script> -->
+
+    <script>
+        console.log('first');
+        let CHANNEL = "{! $MessageChannel.dummyMessageChannel__c}";
+        let subscriptionToMC;
+        console.log('CHANNEL: ', CHANNEL);
+        function handlePublish(){
+            console.log('Publish');
+            var payload = document.getElementById('messagePayload').value;
+            console.log('payload: ', payload);
+            sforce.one.publish(CHANNEL, {"payload": payload});
+        }
+
+        function subscribeToChannel(){
+            console.log('Subscribe');
+            if (!subscriptionToMC) {
+                console.log('inside');
+                subscriptionToMC = sforce.one.subscribe(CHANNEL, handleSubscribe);
+            }
+        }
+
+        function handleSubscribe(message){
+            console.log('message: ', message);
+            document.querySelector('#message').innerHTML = message.payload;
+        }
+    </script>
+</apex:page>

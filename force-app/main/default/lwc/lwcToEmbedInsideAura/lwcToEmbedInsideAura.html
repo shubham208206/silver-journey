@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Test Message Channel LWC" icon-name="utility:advanced_function">
+        <div>
+            This is the lwc to be used inside our VF pages.
+        </div>
+        <div>   
+            <lightning-button label="Publish" onclick={handlePublish}></lightning-button>
+            <lightning-button label="UnSubscribe" onclick={handleUnSubscribe}></lightning-button>
+        </div>
+
+        The content of the payload is : {payload}
+    </lightning-card>
+</template>
